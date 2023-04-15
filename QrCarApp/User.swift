@@ -13,4 +13,9 @@ struct UserData: Decodable {
     let message: String
     let photo: String
     let mail: String
+    let qr: String
+    let telegram_permission: Bool
+    let whatsapp_permission: Bool
+    let phone_permission: Bool
+
 }

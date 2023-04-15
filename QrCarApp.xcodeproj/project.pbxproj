@@ -12,6 +12,9 @@
 		97A1F47629C50B3600476852 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A1F47529C50B3600476852 /* Preview Assets.xcassets */; };
 		97A1F47D29C50C4200476852 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A1F47C29C50C4200476852 /* LoginView.swift */; };
 		97A1F48129CBA39D00476852 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97A1F48029CBA39D00476852 /* GoogleService-Info.plist */; };
+		97AAA88829D06BCD008AE018 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AAA88729D06BCD008AE018 /* WebView.swift */; };
+		97AAA88C29D084DF008AE018 /* DownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AAA88B29D084DF008AE018 /* DownloadView.swift */; };
+		97AAA88E29D0D50B008AE018 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AAA88D29D0D50B008AE018 /* ApiService.swift */; };
 		97CC544729CBAEF200BB2F8C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 97CC544629CBAEF200BB2F8C /* FirebaseAuth */; };
 		97CC544929CBAEF200BB2F8C /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 97CC544829CBAEF200BB2F8C /* FirebaseAuthCombine-Community */; };
 		97CC544B29CBAEF200BB2F8C /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 97CC544A29CBAEF200BB2F8C /* FirebaseDatabase */; };
@@ -49,6 +52,9 @@
 		97A1F47529C50B3600476852 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		97A1F47C29C50C4200476852 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		97A1F48029CBA39D00476852 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		97AAA88729D06BCD008AE018 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		97AAA88B29D084DF008AE018 /* DownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadView.swift; sourceTree = "<group>"; };
+		97AAA88D29D0D50B008AE018 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		97CC545C29CC424900BB2F8C /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		97CC546229CC6B8C00BB2F8C /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		97CC546429CC6C3700BB2F8C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -129,6 +135,9 @@
 				97CC547329CCDC7B00BB2F8C /* EditProfileButton.swift */,
 				97CC548F29CE480E00BB2F8C /* EditEmailView.swift */,
 				97CC549129CF28AF00BB2F8C /* ShareSwitchView.swift */,
+				97AAA88729D06BCD008AE018 /* WebView.swift */,
+				97AAA88B29D084DF008AE018 /* DownloadView.swift */,
+				97AAA88D29D0D50B008AE018 /* ApiService.swift */,
 			);
 			path = QrCarApp;
 			sourceTree = "<group>";
@@ -236,15 +245,18 @@
 				97CC547E29CDAF7D00BB2F8C /* EditPlateView.swift in Sources */,
 				97A1F47D29C50C4200476852 /* LoginView.swift in Sources */,
 				97CC547229CCDC3F00BB2F8C /* ProfileImageView.swift in Sources */,
+				97AAA88E29D0D50B008AE018 /* ApiService.swift in Sources */,
 				97CC548429CE261600BB2F8C /* AuthViewModel.swift in Sources */,
 				97CC547429CCDC7B00BB2F8C /* EditProfileButton.swift in Sources */,
 				97CC549029CE480E00BB2F8C /* EditEmailView.swift in Sources */,
 				97CC546529CC6C3700BB2F8C /* User.swift in Sources */,
+				97AAA88C29D084DF008AE018 /* DownloadView.swift in Sources */,
 				97CC548229CDE38200BB2F8C /* ImageUploader.swift in Sources */,
 				97CC546F29CCD9FF00BB2F8C /* UserDetailView.swift in Sources */,
 				97A1F46E29C50B3500476852 /* QrCarAppApp.swift in Sources */,
 				97CC547629CD001600BB2F8C /* UserService.swift in Sources */,
 				97CC546329CC6B8C00BB2F8C /* UserViewModel.swift in Sources */,
+				97AAA88829D06BCD008AE018 /* WebView.swift in Sources */,
 				97CC546B29CCB36500BB2F8C /* EditMessageView.swift in Sources */,
 				97CC545D29CC424900BB2F8C /* UserView.swift in Sources */,
 			);

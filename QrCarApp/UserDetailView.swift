@@ -1,16 +1,68 @@
 import SwiftUI
 import Combine
+import WebKit
 
 struct UserDetailsView: View {
     @State var mail: String
     @State var userId: String
+    @State var telegram_permission: Bool
+    @State var whatsapp_permission: Bool
+    @State var phone_permission: Bool
+    
+    @State private var telegramUsername = ""
     @State private var showResetPasswordView = false
     @State private var showResetEmailView = false
+
+
+    @State private var showTelegramUsernameSheet = false
     
-    @State private var shareOnWhatsApp = false
-    @State private var shareOnTelegram = false
+    @State private var isDownload = false
     
     @ObservedObject var viewModel = UserViewModel()
+    
+    
+    @Binding var qr: String?
+    
+    private func handleShareOnTelegramToggle(isOn: Bool) {
+        if isOn {
+            showTelegramUsernameSheet = true
+        } else {
+            ApiService.shared.updateTelegramPermission(userId: userId, permission: false)
+        }
+        viewModel.fetchUserData(userId: userId)
+        
+    }
+    
+    func downloadSVG(urlString: String, completion: @escaping (Result<URL, Error>) -> Void) {
+        guard let url = URL(string: urlString) else {
+            completion(.failure(URLError(.badURL)))
+            return
+        }
+
+        let task = URLSession.shared.downloadTask(with: url) { (tempLocalUrl, response, error) in
+            if let tempLocalUrl = tempLocalUrl, error == nil {
+                do {
+                    let fileManager = FileManager.default
+                    let documentsURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+                    let newFileURL = documentsURL.appendingPathComponent("qrcode.svg")
+
+                    if fileManager.fileExists(atPath: newFileURL.path) {
+                        try fileManager.removeItem(at: newFileURL)
+                    }
+                    
+                    try fileManager.moveItem(at: tempLocalUrl, to: newFileURL)
+                    completion(.success(newFileURL))
+                } catch {
+                    completion(.failure(error))
+                }
+            } else {
+                completion(.failure(error!))
+            }
+        }
+        task.resume()
+    }
+
+    
     
     var body: some View {
         Form {
@@ -36,22 +88,63 @@ struct UserDetailsView: View {
                     Text("Şifre Değiştir")
                         .foregroundColor(.red)
                 })
+                
             }
             HStack {
                 Image(systemName: "message.circle")
                 Text("Whatsap ile iletişimi paylaş")
                 Spacer()
-                Toggle("", isOn: $shareOnWhatsApp)
+                Toggle("", isOn: $whatsapp_permission)
                     .toggleStyle(SwitchToggleStyle(tint: .green))
             }
             HStack {
-                Image(systemName: "paperplane.circle")
+                Image(systemName: "arrow.up.circle")
                 Text("Telegram ile iletişimi paylaş")
                 Spacer()
-                Toggle("", isOn: $shareOnTelegram)
+                Toggle("", isOn: $telegram_permission)
                     .toggleStyle(SwitchToggleStyle(tint: .blue))
+                    .onChange(of: telegram_permission, perform: handleShareOnTelegramToggle)
+            }
+            
+            HStack {
+                Image(systemName: "phone.circle")
+                Text("Telefon ile arama izni")
+                Spacer()
+                Toggle("", isOn: $phone_permission)
+                    .toggleStyle(SwitchToggleStyle(tint: .blue))
+                    .onChange(of: phone_permission, perform: handleShareOnTelegramToggle)
+            }
+            
+            HStack {
+                if let qr = qr {
+                    GeometryReader { geometry in
+                        WebView(urlString: qr)
+                            .frame(width: min(geometry.size.width, geometry.size.height) * 0.8, height: min(geometry.size.width, geometry.size.height) * 0.8)
+                    }
+                } else {
+                    Text("Failed to load QR code")
+                }
+
+                Button(action: {
+                    if let qr = qr {
+                        downloadSVG(urlString: qr) { result in
+                            DispatchQueue.main.async {
+                                switch result {
+                                case .success(let fileURL):
+                                    let activityViewController = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
+                                    UIApplication.shared.windows.first?.rootViewController?.present(activityViewController, animated: true, completion: nil)
+                                case .failure(let error):
+                                    print("Error downloading SVG: \(error)")
+                                }
+                            }
+                        }
+                    }
+                }) {
+                    Text("İndir")
+                }
             }
         }
+
         .background(
             NavigationLink("", destination: ResetPasswordView(userId: userId), isActive: $showResetPasswordView)
                 .opacity(0)
@@ -59,15 +152,19 @@ struct UserDetailsView: View {
         .sheet(isPresented: $showResetEmailView) {
             EditEmailView(userId: userId, mail: $viewModel.mail, isPresented: $showResetEmailView)
         }
-
-
         
+        .sheet(isPresented: $showTelegramUsernameSheet) {
+            TelegramUsernameSheet(userId: userId, telegramUsername: $telegramUsername, isVisible: $showTelegramUsernameSheet)
+        }
+        
+
 
         .onAppear {
             viewModel.fetchUserData(userId: userId)
-
-            
+            print("shareOnTelegram:", telegram_permission)
         }
+
+
         .onChange(of: viewModel.mail) { mail in
             self.mail = mail
         }
@@ -77,9 +174,13 @@ struct UserDetailsView: View {
 
 struct UserDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        UserDetailsView(mail: "sample_user_mail", userId: "sample_user_id")
+        UserDetailsView(mail: "sample_user_mail", userId: "sample_user_id",telegram_permission: true,whatsapp_permission: true,phone_permission: true, qr: .constant("sample_qr_url"))
     }
 }
+
+
+
+
 
 struct ResetPasswordView: View {
     @State var userId: String

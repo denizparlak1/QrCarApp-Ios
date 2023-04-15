@@ -8,7 +8,12 @@ class UserViewModel: ObservableObject {
     @Published var parkMessage: String = "Loading..."
     @Published var mail: String = "Loading..."
     @Published var photoUrlString: String?
+    @Published var qr: String?
     
+    @Published var telegram_permission: Bool = true
+    @Published var whatsapp_permission: Bool = true
+    @Published var phone_permission: Bool = true
+
     private var cancellable: AnyCancellable?
     
     func fetchUserData(userId: String?) {
@@ -37,6 +42,12 @@ class UserViewModel: ObservableObject {
                 self.parkMessage = userData.message
                 self.photoUrlString = userData.photo
                 self.mail = userData.mail
+                self.qr = userData.qr
+                self.telegram_permission = userData.telegram_permission
+                self.whatsapp_permission = userData.whatsapp_permission
+                self.phone_permission = userData.phone_permission
+                
+                
                 
             })
     }

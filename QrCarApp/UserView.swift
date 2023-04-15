@@ -31,7 +31,8 @@ struct UserView: View {
                     }) {
                         ProfileImageView(photoUrlString: viewModel.photoUrlString ?? "")
                     }
-
+                    
+                
                 
                     HStack {
                         Image(systemName: "car.fill")
@@ -101,7 +102,7 @@ struct UserView: View {
                 .foregroundColor(.accentColor)
         }))
         .navigationBarItems(trailing:
-            NavigationLink(destination: UserDetailsView(mail: mail, userId: userId)) {
+                                NavigationLink(destination: UserDetailsView(mail: mail, userId: userId,telegram_permission:viewModel.telegram_permission,whatsapp_permission: viewModel.whatsapp_permission,phone_permission: viewModel.phone_permission, qr: $viewModel.qr)) {
                 Text("Ayarlar")
                     .foregroundColor(.accentColor)
             }
