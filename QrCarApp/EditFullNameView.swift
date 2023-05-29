@@ -1,29 +1,29 @@
 import SwiftUI
 
-struct UpdateUserMessage: Codable {
+struct UpdateUserName: Codable {
     let user_id: String
-    let message: String
+    let fullname: String
 }
 
-struct EditMessageView: View {
+struct EditFullNameView: View {
     let userId: String
-    @Binding var message: String
+    @Binding var fullName: String
     @Binding var isPresented: Bool
-    @State private var tempMessage: String 
     @State private var isLoading = false
+    @State private var tempFullName: String
     
-    init(userId: String, message: Binding<String>, isPresented: Binding<Bool>) {
+    init(userId: String, fullName: Binding<String>, isPresented: Binding<Bool>) {
         self.userId = userId
-        _message = message
+        _fullName = fullName
         _isPresented = isPresented
-        _tempMessage = State(initialValue: message.wrappedValue) // Initialize the tempMessage
+        _tempFullName = State(initialValue: fullName.wrappedValue)
     }
-
+    
     var body: some View {
         VStack {
-            Text("Mesajınızı yazın")
+            Text("Adınızı yazın")
                 .font(.headline)
-            TextField("Enter new phone number", text: $tempMessage)
+            TextField("", text: $tempFullName)
                 .padding()
                 .background(Color(.systemGray6))
                 .cornerRadius(8)
@@ -48,20 +48,21 @@ struct EditMessageView: View {
 
     func saveButtonTapped() {
         isLoading = true
-        updateMessage(userId: userId, newMessage: tempMessage) { result in
+        updateFullName(userId: userId, newFullName: tempFullName) { result in
             DispatchQueue.main.async {
                 isLoading = false
                 switch result {
                 case .success(let response):
                     print(response)
-                    self.message = tempMessage
+                    self.fullName = tempFullName
                     isPresented = false
                 case .failure(let error):
-                    print("Error updating message: \(error.localizedDescription)")
+                    print("Error updating full name: \(error.localizedDescription)")
                 }
             }
         }
-
     }
-}
 
+
+
+}

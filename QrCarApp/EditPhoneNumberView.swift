@@ -61,33 +61,21 @@ struct EditPhoneNumberView: View {
 
     func saveButtonTapped() {
         isLoading = true
-        updatePhoneNumber(userId: userId, newPhoneNumber: tempPhoneNumber)
-    }
-
-    func updatePhoneNumber(userId: String, newPhoneNumber: String) {
-        let url = URL(string: "https://qrcarapp-akzshgayzq-uc.a.run.app/user/update/phone")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "PUT"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        let body = UpdateUserPhone(user_id: userId, phone: newPhoneNumber)
-        request.httpBody = try? JSONEncoder().encode(body)
-
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
+        updatePhoneNumber(userId: userId, newPhoneNumber: tempPhoneNumber) { result in
             DispatchQueue.main.async {
                 isLoading = false
-                if let error = error {
+                switch result {
+                case .success(let response):
+                    print(response)
+                    self.phoneNumber = tempPhoneNumber
+                    isPresented = false
+                case .failure(let error):
                     print("Error updating phone number: \(error.localizedDescription)")
-                    return
                 }
-
-                if let data = data {
-                    let response = try? JSONDecoder().decode([String: String].self, from: data)
-                    print(response ?? "No response")
-                }
-                self.phoneNumber = tempPhoneNumber
-                isPresented = false
             }
-        }.resume()
+        }
+
     }
+
+
 }

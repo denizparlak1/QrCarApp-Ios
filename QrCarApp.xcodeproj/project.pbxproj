@@ -7,11 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9739303029ED60F0000A0856 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9739302F29ED60F0000A0856 /* GoogleService-Info.plist */; };
+		97609F2929FFC69F00D07EDD /* UpdateMessageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F2829FFC69F00D07EDD /* UpdateMessageApi.swift */; };
+		97609F2C29FFC80E00D07EDD /* UpdatePhoneApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F2B29FFC80E00D07EDD /* UpdatePhoneApi.swift */; };
+		97609F2F29FFC8AC00D07EDD /* UpdatePlateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F2E29FFC8AC00D07EDD /* UpdatePlateApi.swift */; };
+		97609F3329FFCB3100D07EDD /* WhatsappShareUpdateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F3229FFCB3100D07EDD /* WhatsappShareUpdateApi.swift */; };
+		97609F3529FFF6C700D07EDD /* TelegramShareUpdateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F3429FFF6C700D07EDD /* TelegramShareUpdateApi.swift */; };
+		97609F3729FFF7AA00D07EDD /* SmsShareUpdateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F3629FFF7AA00D07EDD /* SmsShareUpdateApi.swift */; };
+		97609F3C2A00567800D07EDD /* QRCodeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F3B2A00567800D07EDD /* QRCodeSectionView.swift */; };
+		97609F3E2A005FCD00D07EDD /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F3D2A005FCD00D07EDD /* ActivityViewController.swift */; };
+		97609F412A00FF6500D07EDD /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F402A00FF6500D07EDD /* OnboardingView.swift */; };
+		97609F452A010ACD00D07EDD /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F442A010ACD00D07EDD /* QRScannerView.swift */; };
+		97609F4B2A0178B300D07EDD /* EmailPasswordUpdateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F4A2A0178B300D07EDD /* EmailPasswordUpdateApi.swift */; };
+		97609F4E2A0189B200D07EDD /* UpdateOnboardingPermissionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F4D2A0189B200D07EDD /* UpdateOnboardingPermissionApi.swift */; };
+		97609F522A025CB100D07EDD /* UpdateNamePermissionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F512A025CB100D07EDD /* UpdateNamePermissionApi.swift */; };
+		97609F542A0297CD00D07EDD /* EditFullNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F532A0297CD00D07EDD /* EditFullNameView.swift */; };
+		97609F572A0298F100D07EDD /* UpdateFullName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F562A0298F100D07EDD /* UpdateFullName.swift */; };
+		97609F5B2A030BE500D07EDD /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F5A2A030BE500D07EDD /* ForgotPasswordView.swift */; };
+		97609F5D2A158C1C00D07EDD /* PhoneCallPermissionUpdateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F5C2A158C1C00D07EDD /* PhoneCallPermissionUpdateApi.swift */; };
+		97609F602A159C6500D07EDD /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F5F2A159C6500D07EDD /* ResetPassword.swift */; };
 		97A1F46E29C50B3500476852 /* QrCarAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A1F46D29C50B3500476852 /* QrCarAppApp.swift */; };
 		97A1F47229C50B3600476852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A1F47129C50B3600476852 /* Assets.xcassets */; };
 		97A1F47629C50B3600476852 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A1F47529C50B3600476852 /* Preview Assets.xcassets */; };
 		97A1F47D29C50C4200476852 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A1F47C29C50C4200476852 /* LoginView.swift */; };
-		97A1F48129CBA39D00476852 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97A1F48029CBA39D00476852 /* GoogleService-Info.plist */; };
 		97CC544729CBAEF200BB2F8C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 97CC544629CBAEF200BB2F8C /* FirebaseAuth */; };
 		97CC544929CBAEF200BB2F8C /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 97CC544829CBAEF200BB2F8C /* FirebaseAuthCombine-Community */; };
 		97CC544B29CBAEF200BB2F8C /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 97CC544A29CBAEF200BB2F8C /* FirebaseDatabase */; };
@@ -42,13 +60,31 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9739302F29ED60F0000A0856 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		97609F2829FFC69F00D07EDD /* UpdateMessageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMessageApi.swift; sourceTree = "<group>"; };
+		97609F2B29FFC80E00D07EDD /* UpdatePhoneApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePhoneApi.swift; sourceTree = "<group>"; };
+		97609F2E29FFC8AC00D07EDD /* UpdatePlateApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePlateApi.swift; sourceTree = "<group>"; };
+		97609F3229FFCB3100D07EDD /* WhatsappShareUpdateApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsappShareUpdateApi.swift; sourceTree = "<group>"; };
+		97609F3429FFF6C700D07EDD /* TelegramShareUpdateApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramShareUpdateApi.swift; sourceTree = "<group>"; };
+		97609F3629FFF7AA00D07EDD /* SmsShareUpdateApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsShareUpdateApi.swift; sourceTree = "<group>"; };
+		97609F3B2A00567800D07EDD /* QRCodeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeSectionView.swift; sourceTree = "<group>"; };
+		97609F3D2A005FCD00D07EDD /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		97609F402A00FF6500D07EDD /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		97609F442A010ACD00D07EDD /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		97609F4A2A0178B300D07EDD /* EmailPasswordUpdateApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPasswordUpdateApi.swift; sourceTree = "<group>"; };
+		97609F4D2A0189B200D07EDD /* UpdateOnboardingPermissionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateOnboardingPermissionApi.swift; sourceTree = "<group>"; };
+		97609F512A025CB100D07EDD /* UpdateNamePermissionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNamePermissionApi.swift; sourceTree = "<group>"; };
+		97609F532A0297CD00D07EDD /* EditFullNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFullNameView.swift; sourceTree = "<group>"; };
+		97609F562A0298F100D07EDD /* UpdateFullName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFullName.swift; sourceTree = "<group>"; };
+		97609F5A2A030BE500D07EDD /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		97609F5C2A158C1C00D07EDD /* PhoneCallPermissionUpdateApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCallPermissionUpdateApi.swift; sourceTree = "<group>"; };
+		97609F5F2A159C6500D07EDD /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
 		97A1F46A29C50B3500476852 /* QrCarApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QrCarApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A1F46D29C50B3500476852 /* QrCarAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCarAppApp.swift; sourceTree = "<group>"; };
 		97A1F47129C50B3600476852 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97A1F47329C50B3600476852 /* QrCarApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QrCarApp.entitlements; sourceTree = "<group>"; };
 		97A1F47529C50B3600476852 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		97A1F47C29C50C4200476852 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		97A1F48029CBA39D00476852 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		97CC545C29CC424900BB2F8C /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		97CC546229CC6B8C00BB2F8C /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		97CC546429CC6C3700BB2F8C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -89,9 +125,194 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9739303229ED6466000A0856 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				97CC546429CC6C3700BB2F8C /* User.swift */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		9739303429ED6493000A0856 /* auth */ = {
+			isa = PBXGroup;
+			children = (
+				97CC548329CE261600BB2F8C /* AuthViewModel.swift */,
+			);
+			path = auth;
+			sourceTree = "<group>";
+		};
+		9739303529ED64D3000A0856 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				97609F5E2A159BFC00D07EDD /* reset-password */,
+				97609F3F2A00FF5400D07EDD /* onboarding */,
+				97609F382A00565700D07EDD /* user */,
+				9739303629ED64DD000A0856 /* login */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		9739303629ED64DD000A0856 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				97609F592A030BCE00D07EDD /* forgotpassword */,
+				97A1F47C29C50C4200476852 /* LoginView.swift */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		9739303B29ED68E3000A0856 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				97609F2629FFC68000D07EDD /* update */,
+				97CC547529CD001600BB2F8C /* UserService.swift */,
+			);
+			name = service;
+			sourceTree = "<group>";
+		};
+		97609F2629FFC68000D07EDD /* update */ = {
+			isa = PBXGroup;
+			children = (
+				97609F502A025C2000D07EDD /* name */,
+				97609F4C2A0189A100D07EDD /* onboarding */,
+				97609F492A0178A100D07EDD /* email */,
+				97609F3029FFCB1A00D07EDD /* share */,
+				97609F2D29FFC8A100D07EDD /* plate */,
+				97609F2A29FFC75600D07EDD /* phone */,
+				97609F2729FFC68C00D07EDD /* message */,
+			);
+			name = update;
+			sourceTree = "<group>";
+		};
+		97609F2729FFC68C00D07EDD /* message */ = {
+			isa = PBXGroup;
+			children = (
+				97609F2829FFC69F00D07EDD /* UpdateMessageApi.swift */,
+			);
+			name = message;
+			sourceTree = "<group>";
+		};
+		97609F2A29FFC75600D07EDD /* phone */ = {
+			isa = PBXGroup;
+			children = (
+				97609F2B29FFC80E00D07EDD /* UpdatePhoneApi.swift */,
+			);
+			name = phone;
+			sourceTree = "<group>";
+		};
+		97609F2D29FFC8A100D07EDD /* plate */ = {
+			isa = PBXGroup;
+			children = (
+				97609F2E29FFC8AC00D07EDD /* UpdatePlateApi.swift */,
+			);
+			name = plate;
+			sourceTree = "<group>";
+		};
+		97609F3029FFCB1A00D07EDD /* share */ = {
+			isa = PBXGroup;
+			children = (
+				97609F3229FFCB3100D07EDD /* WhatsappShareUpdateApi.swift */,
+				97609F3429FFF6C700D07EDD /* TelegramShareUpdateApi.swift */,
+				97609F3629FFF7AA00D07EDD /* SmsShareUpdateApi.swift */,
+				97609F5C2A158C1C00D07EDD /* PhoneCallPermissionUpdateApi.swift */,
+			);
+			name = share;
+			sourceTree = "<group>";
+		};
+		97609F382A00565700D07EDD /* user */ = {
+			isa = PBXGroup;
+			children = (
+				97609F392A00565E00D07EDD /* settings */,
+			);
+			path = user;
+			sourceTree = "<group>";
+		};
+		97609F392A00565E00D07EDD /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				97609F3A2A00566A00D07EDD /* qr */,
+			);
+			path = settings;
+			sourceTree = "<group>";
+		};
+		97609F3A2A00566A00D07EDD /* qr */ = {
+			isa = PBXGroup;
+			children = (
+				97609F3B2A00567800D07EDD /* QRCodeSectionView.swift */,
+				97609F3D2A005FCD00D07EDD /* ActivityViewController.swift */,
+			);
+			path = qr;
+			sourceTree = "<group>";
+		};
+		97609F3F2A00FF5400D07EDD /* onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				97609F432A010ABC00D07EDD /* qrscan */,
+				97609F402A00FF6500D07EDD /* OnboardingView.swift */,
+			);
+			path = onboarding;
+			sourceTree = "<group>";
+		};
+		97609F422A010AA300D07EDD /* util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		97609F432A010ABC00D07EDD /* qrscan */ = {
+			isa = PBXGroup;
+			children = (
+				97609F442A010ACD00D07EDD /* QRScannerView.swift */,
+			);
+			path = qrscan;
+			sourceTree = "<group>";
+		};
+		97609F492A0178A100D07EDD /* email */ = {
+			isa = PBXGroup;
+			children = (
+				97609F4A2A0178B300D07EDD /* EmailPasswordUpdateApi.swift */,
+			);
+			name = email;
+			sourceTree = "<group>";
+		};
+		97609F4C2A0189A100D07EDD /* onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				97609F4D2A0189B200D07EDD /* UpdateOnboardingPermissionApi.swift */,
+			);
+			name = onboarding;
+			sourceTree = "<group>";
+		};
+		97609F502A025C2000D07EDD /* name */ = {
+			isa = PBXGroup;
+			children = (
+				97609F512A025CB100D07EDD /* UpdateNamePermissionApi.swift */,
+				97609F562A0298F100D07EDD /* UpdateFullName.swift */,
+			);
+			name = name;
+			sourceTree = "<group>";
+		};
+		97609F592A030BCE00D07EDD /* forgotpassword */ = {
+			isa = PBXGroup;
+			children = (
+				97609F5A2A030BE500D07EDD /* ForgotPasswordView.swift */,
+			);
+			path = forgotpassword;
+			sourceTree = "<group>";
+		};
+		97609F5E2A159BFC00D07EDD /* reset-password */ = {
+			isa = PBXGroup;
+			children = (
+				97609F5F2A159C6500D07EDD /* ResetPassword.swift */,
+			);
+			path = "reset-password";
+			sourceTree = "<group>";
+		};
 		97A1F46129C50B3500476852 = {
 			isa = PBXGroup;
 			children = (
+				9739302F29ED60F0000A0856 /* GoogleService-Info.plist */,
 				97A1F46C29C50B3500476852 /* QrCarApp */,
 				97A1F46B29C50B3500476852 /* Products */,
 			);
@@ -108,8 +329,12 @@
 		97A1F46C29C50B3500476852 /* QrCarApp */ = {
 			isa = PBXGroup;
 			children = (
+				97609F422A010AA300D07EDD /* util */,
+				9739303B29ED68E3000A0856 /* service */,
+				9739303529ED64D3000A0856 /* view */,
+				9739303429ED6493000A0856 /* auth */,
+				9739303229ED6466000A0856 /* Entity */,
 				97CC545C29CC424900BB2F8C /* UserView.swift */,
-				97CC548329CE261600BB2F8C /* AuthViewModel.swift */,
 				97CC548129CDE38200BB2F8C /* ImageUploader.swift */,
 				97CC547F29CDE20500BB2F8C /* ImagePicker.swift */,
 				97CC546229CC6B8C00BB2F8C /* UserViewModel.swift */,
@@ -117,18 +342,15 @@
 				97A1F47129C50B3600476852 /* Assets.xcassets */,
 				97A1F47329C50B3600476852 /* QrCarApp.entitlements */,
 				97A1F47429C50B3600476852 /* Preview Content */,
-				97A1F47C29C50C4200476852 /* LoginView.swift */,
-				97A1F48029CBA39D00476852 /* GoogleService-Info.plist */,
-				97CC546429CC6C3700BB2F8C /* User.swift */,
 				97CC546629CC8E4100BB2F8C /* EditPhoneNumberView.swift */,
 				97CC546A29CCB36500BB2F8C /* EditMessageView.swift */,
 				97CC547D29CDAF7D00BB2F8C /* EditPlateView.swift */,
 				97CC546E29CCD9FF00BB2F8C /* UserDetailView.swift */,
-				97CC547529CD001600BB2F8C /* UserService.swift */,
 				97CC547129CCDC3F00BB2F8C /* ProfileImageView.swift */,
 				97CC547329CCDC7B00BB2F8C /* EditProfileButton.swift */,
 				97CC548F29CE480E00BB2F8C /* EditEmailView.swift */,
 				97CC549129CF28AF00BB2F8C /* ShareSwitchView.swift */,
+				97609F532A0297CD00D07EDD /* EditFullNameView.swift */,
 			);
 			path = QrCarApp;
 			sourceTree = "<group>";
@@ -219,7 +441,7 @@
 			files = (
 				97A1F47629C50B3600476852 /* Preview Assets.xcassets in Resources */,
 				97A1F47229C50B3600476852 /* Assets.xcassets in Resources */,
-				97A1F48129CBA39D00476852 /* GoogleService-Info.plist in Resources */,
+				9739303029ED60F0000A0856 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,21 +452,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97609F3529FFF6C700D07EDD /* TelegramShareUpdateApi.swift in Sources */,
+				97609F5B2A030BE500D07EDD /* ForgotPasswordView.swift in Sources */,
+				97609F602A159C6500D07EDD /* ResetPassword.swift in Sources */,
 				97CC548029CDE20500BB2F8C /* ImagePicker.swift in Sources */,
+				97609F2C29FFC80E00D07EDD /* UpdatePhoneApi.swift in Sources */,
+				97609F2929FFC69F00D07EDD /* UpdateMessageApi.swift in Sources */,
+				97609F4B2A0178B300D07EDD /* EmailPasswordUpdateApi.swift in Sources */,
 				97CC546729CC8E4100BB2F8C /* EditPhoneNumberView.swift in Sources */,
+				97609F572A0298F100D07EDD /* UpdateFullName.swift in Sources */,
 				97CC549229CF28AF00BB2F8C /* ShareSwitchView.swift in Sources */,
+				97609F522A025CB100D07EDD /* UpdateNamePermissionApi.swift in Sources */,
 				97CC547E29CDAF7D00BB2F8C /* EditPlateView.swift in Sources */,
 				97A1F47D29C50C4200476852 /* LoginView.swift in Sources */,
+				97609F3E2A005FCD00D07EDD /* ActivityViewController.swift in Sources */,
+				97609F3C2A00567800D07EDD /* QRCodeSectionView.swift in Sources */,
+				97609F3729FFF7AA00D07EDD /* SmsShareUpdateApi.swift in Sources */,
+				97609F5D2A158C1C00D07EDD /* PhoneCallPermissionUpdateApi.swift in Sources */,
+				97609F4E2A0189B200D07EDD /* UpdateOnboardingPermissionApi.swift in Sources */,
+				97609F412A00FF6500D07EDD /* OnboardingView.swift in Sources */,
 				97CC547229CCDC3F00BB2F8C /* ProfileImageView.swift in Sources */,
+				97609F3329FFCB3100D07EDD /* WhatsappShareUpdateApi.swift in Sources */,
 				97CC548429CE261600BB2F8C /* AuthViewModel.swift in Sources */,
 				97CC547429CCDC7B00BB2F8C /* EditProfileButton.swift in Sources */,
+				97609F2F29FFC8AC00D07EDD /* UpdatePlateApi.swift in Sources */,
 				97CC549029CE480E00BB2F8C /* EditEmailView.swift in Sources */,
 				97CC546529CC6C3700BB2F8C /* User.swift in Sources */,
 				97CC548229CDE38200BB2F8C /* ImageUploader.swift in Sources */,
 				97CC546F29CCD9FF00BB2F8C /* UserDetailView.swift in Sources */,
 				97A1F46E29C50B3500476852 /* QrCarAppApp.swift in Sources */,
+				97609F452A010ACD00D07EDD /* QRScannerView.swift in Sources */,
 				97CC547629CD001600BB2F8C /* UserService.swift in Sources */,
 				97CC546329CC6B8C00BB2F8C /* UserViewModel.swift in Sources */,
+				97609F542A0297CD00D07EDD /* EditFullNameView.swift in Sources */,
 				97CC546B29CCB36500BB2F8C /* EditMessageView.swift in Sources */,
 				97CC545D29CC424900BB2F8C /* UserView.swift in Sources */,
 			);
@@ -374,6 +614,11 @@
 				DEVELOPMENT_TEAM = KL87HL2QB7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QrCarApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Open camera permission to scan qr code and record";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -383,7 +628,6 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -411,6 +655,11 @@
 				DEVELOPMENT_TEAM = KL87HL2QB7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QrCarApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Open camera permission to scan qr code and record";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -420,7 +669,6 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";

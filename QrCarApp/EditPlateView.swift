@@ -51,33 +51,20 @@ struct EditPlateView: View {
 
     func saveButtonTapped() {
         isLoading = true
-        updatePlate(userId: userId, plate: tempPlate) // Pass tempPlate instead of plate
-    }
-
-    func updatePlate(userId: String, plate: String) {
-        let url = URL(string: "https://qrcarapp-akzshgayzq-uc.a.run.app/user/update/plate")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "PUT"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        let body = UpdatePlate(user_id: userId, plate: plate)
-        request.httpBody = try? JSONEncoder().encode(body)
-
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
+        updatePlate(userId: userId, plate: tempPlate) { result in
             DispatchQueue.main.async {
                 isLoading = false
-                if let error = error {
+                switch result {
+                case .success(let response):
+                    print(response)
+                    self.plate = tempPlate
+                    isPresented = false
+                case .failure(let error):
                     print("Error updating plate: \(error.localizedDescription)")
-                    return
                 }
-
-                if let data = data {
-                    let response = try? JSONDecoder().decode([String: String].self, from: data)
-                    print(response ?? "No response")
-                }
-                self.plate = tempPlate // Update the plate in UserViewModel
-                isPresented = false
             }
-        }.resume()
+        }
+
     }
+
 }
