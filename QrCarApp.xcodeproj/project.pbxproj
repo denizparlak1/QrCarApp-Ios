@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9739303029ED60F0000A0856 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9739302F29ED60F0000A0856 /* GoogleService-Info.plist */; };
 		97609F2929FFC69F00D07EDD /* UpdateMessageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F2829FFC69F00D07EDD /* UpdateMessageApi.swift */; };
 		97609F2C29FFC80E00D07EDD /* UpdatePhoneApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F2B29FFC80E00D07EDD /* UpdatePhoneApi.swift */; };
 		97609F2F29FFC8AC00D07EDD /* UpdatePlateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97609F2E29FFC8AC00D07EDD /* UpdatePlateApi.swift */; };
@@ -57,10 +56,10 @@
 		97CC548429CE261600BB2F8C /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CC548329CE261600BB2F8C /* AuthViewModel.swift */; };
 		97CC549029CE480E00BB2F8C /* EditEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CC548F29CE480E00BB2F8C /* EditEmailView.swift */; };
 		97CC549229CF28AF00BB2F8C /* ShareSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CC549129CF28AF00BB2F8C /* ShareSwitchView.swift */; };
+		97CF932E2B0BBB2B000DBF86 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97CF932D2B0BBB2B000DBF86 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9739302F29ED60F0000A0856 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		97609F2829FFC69F00D07EDD /* UpdateMessageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMessageApi.swift; sourceTree = "<group>"; };
 		97609F2B29FFC80E00D07EDD /* UpdatePhoneApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePhoneApi.swift; sourceTree = "<group>"; };
 		97609F2E29FFC8AC00D07EDD /* UpdatePlateApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePlateApi.swift; sourceTree = "<group>"; };
@@ -100,6 +99,7 @@
 		97CC548329CE261600BB2F8C /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		97CC548F29CE480E00BB2F8C /* EditEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailView.swift; sourceTree = "<group>"; };
 		97CC549129CF28AF00BB2F8C /* ShareSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSwitchView.swift; sourceTree = "<group>"; };
+		97CF932D2B0BBB2B000DBF86 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,7 +312,7 @@
 		97A1F46129C50B3500476852 = {
 			isa = PBXGroup;
 			children = (
-				9739302F29ED60F0000A0856 /* GoogleService-Info.plist */,
+				97CF932D2B0BBB2B000DBF86 /* GoogleService-Info.plist */,
 				97A1F46C29C50B3500476852 /* QrCarApp */,
 				97A1F46B29C50B3500476852 /* Products */,
 			);
@@ -405,7 +405,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					97A1F46929C50B3500476852 = {
 						CreatedOnToolsVersion = 14.2;
@@ -441,7 +441,7 @@
 			files = (
 				97A1F47629C50B3600476852 /* Preview Assets.xcassets in Resources */,
 				97A1F47229C50B3600476852 /* Assets.xcassets in Resources */,
-				9739303029ED60F0000A0856 /* GoogleService-Info.plist in Resources */,
+				97CF932E2B0BBB2B000DBF86 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,9 +526,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -584,9 +586,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -610,6 +614,7 @@
 				CODE_SIGN_ENTITLEMENTS = QrCarApp/QrCarApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"QrCarApp/Preview Content\"";
 				DEVELOPMENT_TEAM = KL87HL2QB7;
 				ENABLE_PREVIEWS = YES;
@@ -651,6 +656,7 @@
 				CODE_SIGN_ENTITLEMENTS = QrCarApp/QrCarApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"QrCarApp/Preview Content\"";
 				DEVELOPMENT_TEAM = KL87HL2QB7;
 				ENABLE_PREVIEWS = YES;
