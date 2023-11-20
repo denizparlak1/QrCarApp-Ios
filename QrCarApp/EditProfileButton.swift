@@ -4,6 +4,10 @@ struct EditProfileButton: View {
     @Binding var showUserDetailsView: Bool
     var userId: String
     var mail: String
+    var whatsapp_permission: Bool
+    var telegram_permission: Bool
+    var sms_permission: Bool
+
     
     var body: some View {
         Button(action: {

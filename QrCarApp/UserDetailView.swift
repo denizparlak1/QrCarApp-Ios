@@ -4,14 +4,21 @@ import Combine
 struct UserDetailsView: View {
     @State var mail: String
     @State var userId: String
+    @State private var qrCodeUrl: String = ""
+
     @State private var showResetPasswordView = false
     @State private var showResetEmailView = false
-    
+    @State private var showInAppPurchaseView = false
+
     @State private var shareOnWhatsApp = false
     @State private var shareOnTelegram = false
-    
-    @ObservedObject var viewModel = UserViewModel()
-    
+    @State private var shareSMS = false
+    @State private var namePermission = false
+    @State private var phonePermission = false
+
+    @StateObject var viewModel = UserViewModel()
+
+
     var body: some View {
         Form {
             Section(header: Text("Account Information")) {
@@ -28,7 +35,6 @@ struct UserDetailsView: View {
                             .foregroundColor(.accentColor)
                     })
                 }
-                
 
                 Button(action: {
                     showResetPasswordView = true
@@ -37,20 +43,52 @@ struct UserDetailsView: View {
                         .foregroundColor(.red)
                 })
             }
-            HStack {
-                Image(systemName: "message.circle")
-                Text("Whatsap ile iletişimi paylaş")
-                Spacer()
-                Toggle("", isOn: $shareOnWhatsApp)
-                    .toggleStyle(SwitchToggleStyle(tint: .green))
+
+            ShareSwitchView(shareOnWhatsApp: $viewModel.shareOnWhatsApp, shareOnTelegram: $viewModel.shareOnTelegram, shareSMS: $viewModel.shareSMS, namePermission: $viewModel.namePermission, phonePermission: $viewModel.phonePermission, userId: userId)
+            
+            VStack {
+                Button(action: {
+                    showInAppPurchaseView = true
+                }) {
+                    HStack {
+                        Image(systemName: "dollarsign.circle") // Replace with the desired icon
+                            .font(.system(size: 24))
+                        Text("Mesaj Satın Al")
+                            .font(.headline)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                }
+                .padding(.horizontal)
+                
+                Button(action: {
+                    guard let qrCodeUrl = viewModel.qr,
+                          let url = URL(string: qrCodeUrl) else {
+                        return
+                    }
+                    let vc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+                    UIApplication.shared.windows.first?.rootViewController?.present(vc, animated: true, completion: nil)
+                }) {
+                    HStack {
+                        Image(systemName: "square.and.arrow.down")
+                        Text("QR Kod İndir")
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .foregroundColor(.white)
+                    .background(Color.green)
+                    .cornerRadius(10)
+                }
+                .padding(.horizontal)
             }
-            HStack {
-                Image(systemName: "paperplane.circle")
-                Text("Telegram ile iletişimi paylaş")
-                Spacer()
-                Toggle("", isOn: $shareOnTelegram)
-                    .toggleStyle(SwitchToggleStyle(tint: .blue))
-            }
+            .buttonStyle(PlainButtonStyle())
         }
         .background(
             NavigationLink("", destination: ResetPasswordView(userId: userId), isActive: $showResetPasswordView)
@@ -59,19 +97,9 @@ struct UserDetailsView: View {
         .sheet(isPresented: $showResetEmailView) {
             EditEmailView(userId: userId, mail: $viewModel.mail, isPresented: $showResetEmailView)
         }
-
-
-        
-
         .onAppear {
             viewModel.fetchUserData(userId: userId)
-
-            
         }
-        .onChange(of: viewModel.mail) { mail in
-            self.mail = mail
-        }
-
     }
 }
 
@@ -80,6 +108,10 @@ struct UserDetailsView_Previews: PreviewProvider {
         UserDetailsView(mail: "sample_user_mail", userId: "sample_user_id")
     }
 }
+
+
+
+
 
 struct ResetPasswordView: View {
     @State var userId: String

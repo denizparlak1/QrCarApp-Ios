@@ -6,6 +6,8 @@ class AuthViewModel: ObservableObject {
     @Published var isLoggedIn = false
     @Published var userId: String?
     @Published var userEmail: String? = nil
+    
+    
 
     private var authStateDidChangeListenerHandle: AuthStateDidChangeListenerHandle?
 
